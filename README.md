@@ -1,4 +1,4 @@
-# The WILD AOSIS BY KAY
+# The-Wild-Aosis# The WILD AOSIS BY KAY
 
 it's been months of learning React and its libraries and I built this project to practise all I've learnt so far. The wild aosis is project that is built to replicate an hotel website where only workers in the hostel can operate the website. They can check in guest, check out guest, sign up a new user ( a new hotel worker), update the user's settings which include name and avatar, and update the user's password. The hotel data are all represented by implementing graphs in the dashboard page. The user can also update the hotel settings in the website which include breakfast price, price of cabins, etc. I also implemented sorting and filtering through different parameters in different page. Finally, I implemented dark mode for this website. Through this project, I was able to use different react libraries to implement different functionalties. I also used Supabase for its backend and authentication.
 
