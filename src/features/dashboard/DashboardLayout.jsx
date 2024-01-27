@@ -9,10 +9,36 @@ import DurationChart from "./DurationChart";
 import TodayActivity from "../check-in-out/TodayActivity";
 
 const StyledDashboardLayout = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: auto 34rem auto;
-  gap: 2.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.8rem;
+  width: 100%;
+  overflow: hidden;
+
+  @media screen and (max-width: 768px) {
+    width: 97%;
+  }
+`;
+
+const StyledStats = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    gap: 15px;
+  }
+`;
+
+const StyledActivityChartContainer = styled.div`
+  display: flex;
+  gap: 10px;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    gap: 25px;
+  }
 `;
 
 function DashboardLayout() {
@@ -25,14 +51,20 @@ function DashboardLayout() {
 
   return (
     <StyledDashboardLayout>
-      <Stats
-        bookings={bookings}
-        confirmStays={confirmStays}
-        numDays={numDays}
-        cabinCount={cabins.length}
-      />
-      <TodayActivity />
-      <DurationChart confirmedStays={confirmStays} />
+      <StyledStats>
+        <Stats
+          bookings={bookings}
+          confirmStays={confirmStays}
+          numDays={numDays}
+          cabinCount={cabins.length}
+        />
+      </StyledStats>
+
+      <StyledActivityChartContainer>
+        <TodayActivity />
+
+        <DurationChart confirmedStays={confirmStays} />
+      </StyledActivityChartContainer>
 
       <SalesChart bookings={bookings} numDays={numDays} />
     </StyledDashboardLayout>

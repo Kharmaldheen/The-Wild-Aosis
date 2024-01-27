@@ -32,16 +32,10 @@ function App() {
     <DarkModeProvider>
       <QueryClientProvider client={queryClient}>
         <ReactQueryDevtools initialIsOpen={false} />
-        <GlobalStyles />;
+        <GlobalStyles />
         <BrowserRouter>
           <Routes>
-            <Route
-              element={
-                <ProtectedRoute>
-                  <Applayout />
-                </ProtectedRoute>
-              }
-            >
+            <Route element={<ProtectedRoute>{<Applayout />}</ProtectedRoute>}>
               <Route index element={<Navigate replace to="dashboard" />} />
               <Route path="dashboard" element={<Dashboard />} />
               <Route path="cabins" element={<Cabins />} />

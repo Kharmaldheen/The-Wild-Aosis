@@ -9,6 +9,12 @@ const StyledFilter = styled.div`
   padding: 0.4rem;
   display: flex;
   gap: 0.4rem;
+
+  @media screen and (max-width: 768px) {
+    padding: 0 0.2rem;
+    gap: 0.2rem;
+    margin-left: 15px;
+  }
 `;
 
 const FilterButton = styled.button`
@@ -16,7 +22,7 @@ const FilterButton = styled.button`
   border: none;
 
   ${(props) =>
-    props.active &&
+    props.active === "true" &&
     css`
       background-color: var(--color-brand-600);
       color: var(--color-brand-50);
@@ -32,6 +38,10 @@ const FilterButton = styled.button`
   &:hover:not(:disabled) {
     background-color: var(--color-brand-600);
     color: var(--color-brand-50);
+  }
+
+  @media screen and (max-width: 768px) {
+    font-size: 1.1rem;
   }
 `;
 
@@ -53,7 +63,7 @@ function Filter({ filterField, options }) {
         <FilterButton
           key={option.value}
           onClick={() => handleClick(option.value)}
-          active={currentFilterValue === option.value}
+          active={currentFilterValue === option.value ? "true" : "false"}
           disabled={currentFilterValue === option.value}
         >
           {option.label}

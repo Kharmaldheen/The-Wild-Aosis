@@ -8,11 +8,18 @@ const StyledFormRow = styled.div`
 
   padding: 1.2rem 0;
 
+  @media screen and (max-width: 768px) {
+    grid-template-columns: 9rem 1.2fr;
+    padding: 0.7rem 1rem;
+    gap: 1.2rem;
+  }
+
   &:first-child {
     padding-top: 0;
   }
 
   &:last-child {
+    /* padding-top: 0; */
     padding-bottom: 0;
   }
 
@@ -24,20 +31,47 @@ const StyledFormRow = styled.div`
     display: flex;
     justify-content: flex-end;
     gap: 1.2rem;
+
+    @media screen and (max-width: 768px) {
+      gap: 0.6rem;
+    }
   }
 `;
 
-const Error = styled.span`
-  font-size: 1.4rem;
+const Error1 = styled.span`
+  display: block;
+  font-size: 1.3rem;
   color: var(--color-red-700);
+  display: flex;
+  justify-content: center;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+`;
+
+const Error2 = styled.span`
+  display: none;
+
+  @media screen and (max-width: 768px) {
+    display: block;
+    color: var(--color-red-700);
+    display: flex;
+    justify-content: center;
+    font-size: 1rem;
+    justify-content: flex-end;
+  }
 `;
 
 function FormRow({ error, children }) {
   return (
-    <StyledFormRow>
-      {children}
-      {error && <Error>{error}</Error>}
-    </StyledFormRow>
+    <>
+      <StyledFormRow>
+        {children}
+        {error && <Error1>{error}</Error1>}
+      </StyledFormRow>
+      {error && <Error2>{error}</Error2>}
+    </>
   );
 }
 

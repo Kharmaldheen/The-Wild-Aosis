@@ -3,7 +3,7 @@ import styled from "styled-components";
 import BookingDataBox from "./BookingDataBox";
 import Row from "../../ui/Row";
 import Heading from "../../ui/Heading";
-import Tag from "../../ui/Tag";
+
 import ButtonGroup from "../../ui/ButtonGroup";
 import Button from "../../ui/Button";
 import ButtonText from "../../ui/ButtonText";
@@ -23,6 +23,23 @@ const HeadingGroup = styled.div`
   display: flex;
   gap: 2.4rem;
   align-items: center;
+
+  @media screen and (max-width: 768px) {
+    gap: 1.6rem;
+  }
+`;
+
+const StyledTag = styled.span`
+  width: fit-content;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.4rem 1.2rem;
+  border-radius: 100px;
+
+  /* Make these dynamic, based on the received prop */
+  color: var(--color-${(props) => props.type}-700);
+  background-color: var(--color-${(props) => props.type}-100);
 `;
 
 function BookingDetail() {
@@ -54,7 +71,9 @@ function BookingDetail() {
       <Row type="horizontal">
         <HeadingGroup>
           <Heading as="h1">Booking #{bookingId}</Heading>
-          <Tag type={statusToTagName[status]}>{status.replace("-", " ")}</Tag>
+          <StyledTag type={statusToTagName[status]}>
+            {status.replace("-", " ")}
+          </StyledTag>
         </HeadingGroup>
         <ButtonText onClick={moveBack}>&larr; Back</ButtonText>
       </Row>

@@ -6,8 +6,11 @@ import { Link } from "react-router-dom";
 import CheckoutButton from "./CheckoutButton";
 
 const StyledTodayItem = styled.li`
-  display: grid;
-  grid-template-columns: 9rem 2rem 1fr 7rem 9rem;
+  /* display: grid;
+  grid-template-columns: 9rem 2rem 1fr 7rem 9rem; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   gap: 1.2rem;
   align-items: center;
 
@@ -18,10 +21,25 @@ const StyledTodayItem = styled.li`
   &:first-child {
     border-top: 1px solid var(--color-grey-100);
   }
+
+  @media screen and (max-width: 768px) {
+    font-size: 1rem;
+    gap: 0.4rem;
+  }
 `;
 
 const Guest = styled.div`
   font-weight: 500;
+`;
+
+const StyledFullnameFlag = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  @media screen and (max-width: 768px) {
+    gap: 5px;
+  }
 `;
 
 function TodayItem({ activity }) {
@@ -37,9 +55,11 @@ function TodayItem({ activity }) {
       {status === "unconfirmed" && <Tag type="green">Arriving</Tag>}
       {status === "checked-in" && <Tag type="blue">Departing</Tag>}
 
-      <Flag src={countryFlag} alt={`flag of ${nationality}`} />
+      <StyledFullnameFlag>
+        <Flag src={countryFlag} alt={`flag of ${nationality}`} />
 
-      <Guest>{fullName}</Guest>
+        <Guest>{fullName}</Guest>
+      </StyledFullnameFlag>
 
       <div>{numNights} nights</div>
 

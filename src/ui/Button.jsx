@@ -7,16 +7,29 @@ const sizes = {
     text-transform: uppercase;
     font-weight: 600;
     text-align: center;
+
+    @media screen and (max-width: 768px) {
+      font-size: 0.85rem;
+      padding: 0.2rem 0.4rem;
+    }
   `,
   medium: css`
     font-size: 1.4rem;
     padding: 1.2rem 1.6rem;
     font-weight: 500;
+
+    @media screen and (max-width: 768px) {
+      font-size: 1.1rem;
+    }
   `,
   large: css`
     font-size: 1.6rem;
     padding: 1.2rem 2.4rem;
     font-weight: 500;
+
+    @media screen and (max-width: 768px) {
+      font-size: 1.2rem;
+    }
   `,
 };
 
@@ -57,7 +70,10 @@ const Button = styled.button`
   box-shadow: var(--shadow-sm);
 
   ${(props) => sizes[props.size]}
-  ${(props) => variations[props.variation]}
+  ${(props) =>
+    variations[props.variation]} /* @media screen and (max-width: 768px) {
+    font-size: 1.1rem;
+  } */
 `;
 
 Button.defaultProps = {

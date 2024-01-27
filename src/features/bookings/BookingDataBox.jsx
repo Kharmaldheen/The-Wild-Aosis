@@ -31,6 +31,12 @@ const Header = styled.header`
   align-items: center;
   justify-content: space-between;
 
+  @media screen and (max-width: 768px) {
+    font-size: 1.2rem;
+    flex-direction: column;
+    gap: 8px;
+  }
+
   svg {
     height: 3.2rem;
     width: 3.2rem;
@@ -62,6 +68,12 @@ const Guest = styled.div`
   margin-bottom: 1.6rem;
   color: var(--color-grey-500);
 
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    gap: 0.8rem;
+    align-items: flex-start;
+  }
+
   & p:first-of-type {
     font-weight: 500;
     color: var(--color-grey-700);
@@ -75,6 +87,13 @@ const Price = styled.div`
   padding: 1.6rem 3.2rem;
   border-radius: var(--border-radius-sm);
   margin-top: 2.4rem;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    padding: 1.2rem 2rem;
+    margin-top: 2rem;
+    gap: 10px;
+  }
 
   background-color: ${(props) =>
     props.isPaid ? "var(--color-green-100)" : "var(--color-yellow-100)"};
@@ -99,6 +118,23 @@ const Footer = styled.footer`
   font-size: 1.2rem;
   color: var(--color-grey-500);
   text-align: right;
+`;
+
+const StyledDiv = styled.div`
+  display: flex;
+  gap: 7px;
+`;
+
+const StyledSpan = styled.span`
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+`;
+
+const StyledP = styled.p`
+  @media screen and (max-width: 768px) {
+    font-size: 1.3rem;
+  }
 `;
 
 // A purely presentational component
@@ -140,14 +176,18 @@ function BookingDataBox({ booking }) {
 
       <Section>
         <Guest>
-          {countryFlag && <Flag src={countryFlag} alt={`Flag of ${country}`} />}
-          <p>
-            {guestName} {numGuests > 1 ? `+ ${numGuests - 1} guests` : ""}
-          </p>
-          <span>&bull;</span>
-          <p>{email}</p>
-          <span>&bull;</span>
-          <p>National ID {nationalID}</p>
+          <StyledDiv>
+            {countryFlag && (
+              <Flag src={countryFlag} alt={`Flag of ${country}`} />
+            )}
+            <p>
+              {guestName} {numGuests > 1 ? `+ ${numGuests - 1} guests` : ""}
+            </p>
+          </StyledDiv>
+          <StyledSpan>&bull;</StyledSpan>
+          <StyledP>{email}</StyledP>
+          <StyledSpan>&bull;</StyledSpan>
+          <StyledP>National ID {nationalID}</StyledP>
         </Guest>
 
         {observations && (

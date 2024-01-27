@@ -17,6 +17,7 @@ const GlobalStyles = createGlobalStyle`
   --color-grey-700: #374151;
   --color-grey-800: #1f2937;
   --color-grey-900: #111827;
+  
 
   --color-blue-100: #e0f2fe;
   --color-blue-700: #0369a1;
@@ -121,9 +122,14 @@ body {
 
   transition: color 0.3s, background-color 0.3s;
   min-height: 100vh;
+  width: 100vw;
+  overflow: hidden;
   line-height: 1.5;
   font-size: 1.6rem;
+  background-color: red;
+  
 }
+
 
 input,
 button,
@@ -188,9 +194,6 @@ img {
 }
 
 
-
-
-*/
 `;
 
 export default GlobalStyles;

@@ -55,8 +55,6 @@ function CabinRow({ cabin }) {
 
   const { isCreating, createCabin } = useCreateCabin();
 
-  console.log(isCreating);
-
   const {
     id: cabinId,
     image,
@@ -101,6 +99,7 @@ function CabinRow({ cabin }) {
                 <Menus.Button
                   icon={<HiSquare2Stack />}
                   onClick={handleDuplicate}
+                  disabled={isCreating}
                 >
                   Duplicate
                 </Menus.Button>

@@ -11,6 +11,10 @@ const Heading = styled.h1`
     css`
       font-size: 3rem;
       font-weight: 700;
+
+      @media screen and (max-width: 768px) {
+        font-size: 2rem;
+      }
     `}
 
   ${(props) =>
@@ -18,6 +22,11 @@ const Heading = styled.h1`
     css`
       font-size: 2rem;
       font-weight: 700;
+
+      @media screen and (max-width: 768px) {
+        font-size: 1.8rem;
+        text-align: center;
+      }
     `}
 
   ${(props) =>
@@ -33,6 +42,9 @@ const Heading = styled.h1`
       text-align: center;
       font-size: 3rem;
       font-weight: 600;
+      @media only screen and (max-width: 768px) {
+        font-size: 2rem;
+      }
     `}
 
   line-height:1.4;

@@ -17,6 +17,10 @@ const P = styled.p`
   & span {
     font-weight: 600;
   }
+
+  @media screen and (max-width: 768px) {
+    font-size: 1.2rem;
+  }
 `;
 
 const Buttons = styled.div`
@@ -57,6 +61,10 @@ const PaginationButton = styled.button`
     background-color: var(--color-brand-600);
     color: var(--color-brand-50);
   }
+
+  @media screen and (max-width: 768px) {
+    font-size: 1.2rem;
+  }
 `;
 
 function Pagination({ count }) {
@@ -88,8 +96,7 @@ function Pagination({ count }) {
         Showing <span>{(currentPage - 1) * PAGE_SIZE + 1}</span> to{" "}
         <span>
           {currentPage !== pageCount ? PAGE_SIZE * currentPage : count}
-        </span>
-        {""}
+        </span>{" "}
         of <span>{count} </span> results
       </P>
       <Buttons>

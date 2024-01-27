@@ -7,13 +7,23 @@ const Main = styled.main`
   background-color: var(--color-grey-50);
   padding: 4rem 4.8rem 6.4rem;
   overflow-y: scroll;
+
+  @media screen and (max-width: 768px) {
+    padding: 4rem 3rem 6.4rem;
+  }
 `;
 
 const StyledApplayout = styled.div`
   display: grid;
-  height: 100vh;
+  height: 100svh;
+  width: 100svw;
   grid-template-columns: 26rem 1fr;
   grid-template-rows: auto 1fr;
+  overflow: hidden;
+
+  @media screen and (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const Container = styled.div`

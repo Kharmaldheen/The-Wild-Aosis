@@ -4,6 +4,10 @@ const FileInput = styled.input.attrs({ type: "file" })`
   font-size: 1.4rem;
   border-radius: var(--border-radius-sm);
 
+  @media screen and (max-width: 768px) {
+    font-size: 1rem;
+  }
+
   &::file-selector-button {
     font: inherit;
     font-weight: 500;

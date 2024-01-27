@@ -4,14 +4,25 @@ import Row from "../ui/Row";
 import CabinTable from "../features/cabins/CabinTable";
 import AddCabin from "../features/cabins/AddCabin";
 import CabinTableOperations from "../features/cabins/CabinTableOperations";
+import { styled } from "styled-components";
+
+const StyledRow = styled.div`
+  display: flex;
+  justify-content: space-between;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    gap: 20px;
+  }
+`;
 
 function Cabins() {
   return (
     <>
-      <Row type="horizontal">
+      <StyledRow>
         <Heading as="h1">All cabins</Heading>
         <CabinTableOperations />
-      </Row>
+      </StyledRow>
 
       <Row>
         <CabinTable />
