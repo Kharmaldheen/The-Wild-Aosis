@@ -126,7 +126,12 @@ body {
   overflow: hidden;
   line-height: 1.5;
   font-size: 1.6rem;
-  background-color: red;
+  
+
+  @media screen and (max-width: 768px) {
+      width: 100%;
+      
+    }
   
 }
 

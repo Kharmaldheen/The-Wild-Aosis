@@ -9,7 +9,7 @@ const Main = styled.main`
   overflow-y: scroll;
 
   @media screen and (max-width: 768px) {
-    padding: 4rem 3rem 6.4rem;
+    padding: 4rem 2rem 6.4rem;
   }
 `;
 

@@ -41,6 +41,10 @@ const Stacked = styled.div`
 
   & span:first-child {
     font-weight: 500;
+
+    @media screen and (max-width: 768px) {
+      font-size: 0.89rem;
+    }
   }
 
   & span:last-child {

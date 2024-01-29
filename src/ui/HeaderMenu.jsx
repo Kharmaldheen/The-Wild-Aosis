@@ -10,7 +10,7 @@ const StyledHeaderMenu = styled.ul`
   gap: 0.4rem;
 
   @media screen and (max-width: 768px) {
-    margin-left: 60px;
+    /* margin-left: 40px; */
     /* z-index: 150; */
   }
 `;

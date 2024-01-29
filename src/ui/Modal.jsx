@@ -14,6 +14,11 @@ const StyledModal = styled.div`
   box-shadow: var(--shadow-lg);
   padding: 3.2rem 4rem;
   transition: all 0.5s;
+
+  @media screen and (max-width: 768px) {
+    padding: 3rem 2.8rem;
+    left: 49.5%;
+  }
 `;
 
 const Overlay = styled.div`
@@ -38,6 +43,11 @@ const Button = styled.button`
   position: absolute;
   top: 1.2rem;
   right: 1.9rem;
+
+  @media screen and (max-width: 768px) {
+    top: 1rem;
+    right: 1.3rem;
+  }
 
   &:hover {
     background-color: var(--color-grey-100);

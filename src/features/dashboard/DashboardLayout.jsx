@@ -16,7 +16,7 @@ const StyledDashboardLayout = styled.div`
   overflow: hidden;
 
   @media screen and (max-width: 768px) {
-    width: 97%;
+    width: 100%;
   }
 `;
 
